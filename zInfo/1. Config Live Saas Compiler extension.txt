@@ -1,0 +1,47 @@
+Install Live Sass Compiler (Extension) -->
+   info: afer installing this extension you will get watch icon in your vs code which will watch you scss file and create compiled css file.
+
+Install Live Server (extension)
+
+after install--> goto vscode --> settings (to bottom left gear icon)
+-->  settings --> search sass -->  goto Live Sass Compiler --> edit in settings.json
+--> add following line in install
+
+{
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "compressed",
+            "extensionName": ".min.css",
+            "savePath": "/dist/css"
+        }
+    ],
+    "liveSassCompile.settings.generateMap": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe"
+}
+
+
+
+
+create your folder structure 
+
+1. create folder dist  --> here will be our UI
+2. create folder scss  --> here will be our sass file
+3. in scss folder create style.scss file. and add some css to it
+4. create index page in dist folder
+5. add link 
+    <link rel="stylesheet" href="css/style.min.css">
+
+Note: above css file get compile with sass
+
+
+
+In sass, You should have seperate file for things like variable, mixin, function
+(example: _config.scss)
+
+_config.scss is a partial file which we include in style.scss
+@import 'config'
+
+
+rem : it is equal to the size given to <html> element (default is 16px)
+if set html {fonsize:10px;}  then 1rem = 10px;
